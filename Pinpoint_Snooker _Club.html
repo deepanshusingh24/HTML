@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pinpoint Snooker & Pool Club | Faridabad</title>
+<meta name="description" content="Pinpoint Snooker & Pool Club — a premium snooker and pool club located in sector 11D, Faridabad. Tournament-grade tables, proper lighting, open daily.">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300..700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap');
+ 
+  :root{
+    --ink:#0E0C0A;
+    --ink-soft:#171310;
+    --felt:#0F3D2E;
+    --felt-deep:#082A20;
+    --brass:#C7A046;
+    --brass-soft:#A98937;
+    --ivory:#EFE7D8;
+    --stone:#B7AFA0;
+    --stone-dim:#7C7567;
+    --red:#C1272D;
+    --yellow:#E8B923;
+    --green:#1F6F4A;
+    --brown:#6B4226;
+    --blue:#1B4F91;
+    --pink:#C98098;
+    --black:#161616;
+    --white:#F2EDE2;
+    --maxw:1140px;
+  }
+ 
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    *{animation:none !important; transition:none !important;}
+  }
+ 
+  body{
+    background:var(--ink);
+    color:var(--ivory);
+    font-family:'Inter',sans-serif;
+    font-size:16px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+ 
+  a{color:inherit;text-decoration:none;}
+  img,svg{display:block;}
+ 
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px;}
+ 
+  .eyebrow{
+    font-family:'JetBrains Mono',monospace;
+    font-size:12px;
+    letter-spacing:0.18em;
+    text-transform:uppercase;
+    color:var(--brass);
+    margin-bottom:14px;
+    display:flex;
+    align-items:center;
+    gap:10px;
+  }
+  .eyebrow::before{
+    content:'';
+    width:18px;height:1px;
+    background:var(--brass);
+    display:inline-block;
+  }
+ 
+  h1,h2,h3{
+    font-family:'Fraunces',serif;
+    font-weight:600;
+    letter-spacing:-0.01em;
+  }
+ 
+  /* ===== NAV ===== */
+  header{
+    position:fixed;
+    top:0;left:0;right:0;
+    z-index:100;
+    background:rgba(14,12,10,0.85);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid rgba(199,160,70,0.18);
+  }
+  nav{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:16px 28px;
+    max-width:var(--maxw);
+    margin:0 auto;
+  }
+  .brand{
+    display:flex;
+    align-items:center;
+    gap:10px;
+  }
+  .brand-mark{
+    width:30px;height:30px;
+    border-radius:50%;
+    border:1.5px solid var(--brass);
+    display:flex;align-items:center;justify-content:center;
+    font-family:'Fraunces',serif;
+    font-size:13px;
+    color:var(--brass);
+    flex-shrink:0;
+  }
+  .brand-text{
+    font-family:'Fraunces',serif;
+    font-size:17px;
+    letter-spacing:0.04em;
+    color:var(--ivory);
+  }
+  .brand-text small{
+    display:block;
+    font-family:'JetBrains Mono',monospace;
+    font-size:9.5px;
+    letter-spacing:0.16em;
+    color:var(--stone-dim);
+    margin-top:1px;
+  }
+  .nav-links{
+    display:flex;
+    gap:34px;
+    list-style:none;
+    font-size:13.5px;
+    letter-spacing:0.03em;
+  }
+  .nav-links a{
+    color:var(--stone);
+    transition:color 0.2s ease;
+    position:relative;
+    padding:4px 0;
+  }
+  .nav-links a:hover, .nav-links a:focus-visible{color:var(--ivory);}
+  .nav-links a:focus-visible{outline:1px solid var(--brass); outline-offset:4px;}
+ 
+  .nav-cta{
+    border:1px solid var(--brass);
+    color:var(--brass) !important;
+    padding:8px 18px;
+    border-radius:2px;
+    font-size:12.5px;
+    letter-spacing:0.05em;
+  }
+  .nav-cta:hover{background:var(--brass); color:var(--ink) !important;}
+ 
+  .menu-toggle{
+    display:none;
+    flex-direction:column;
+    gap:5px;
+    background:none;border:none;cursor:pointer;
+    padding:6px;
+  }
+  .menu-toggle span{width:22px;height:1.5px;background:var(--ivory);display:block;}
+ 
+  /* ===== HERO ===== */
+  .hero{
+    min-height:90vh;
+    display:flex;
+    align-items:center;
+    position:relative;
+    overflow:hidden;
+    background:
+      radial-gradient(ellipse 900px 600px at 50% -10%, rgba(199,160,70,0.16), transparent 60%),
+      linear-gradient(180deg, var(--ink) 0%, var(--ink-soft) 55%, var(--felt-deep) 130%);
+  }
+  .hero::after{
+    content:'';
+    position:absolute;
+    top:-220px;left:50%;
+    transform:translateX(-50%);
+    width:1100px;height:700px;
+    background:radial-gradient(ellipse closest-side, rgba(239,231,216,0.10), transparent 70%);
+    pointer-events:none;
+  }
+  .hero-inner{
+    position:relative;
+    z-index:2;
+    width:100%;
+    text-align:center;
+    padding:70px 28px 90px;
+  }
+  .hero-eyebrow{
+    font-family:'JetBrains Mono',monospace;
+    font-size:12.5px;
+    letter-spacing:0.22em;
+    text-transform:uppercase;
+    color:var(--brass);
+    margin-bottom:26px;
+  }
+  .hero h1{
+    font-size:clamp(48px, 9vw, 104px);
+    line-height:0.98;
+    color:var(--ivory);
+    margin-bottom:22px;
+  }
+  .hero h1 em{
+    font-style:italic;
+    color:var(--brass);
+    font-weight:400;
+  }
+  .hero-rule{
+    width:60px;height:1px;
+    background:var(--brass);
+    margin:0 auto 26px;
+  }
+  .hero-sub{
+    max-width:560px;
+    margin:0 auto 44px;
+    color:var(--stone);
+    font-size:17px;
+    line-height:1.7;
+  }
+  .hero-actions{
+    display:flex;
+    gap:16px;
+    justify-content:center;
+    flex-wrap:wrap;
+  }
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    padding:14px 28px;
+    border-radius:2px;
+    font-size:14px;
+    letter-spacing:0.03em;
+    font-weight:500;
+    transition:all 0.2s ease;
+    border:1px solid transparent;
+  }
+  .btn-primary{
+    background:var(--brass);
+    color:var(--ink);
+  }
+  .btn-primary:hover{background:var(--ivory);}
+  .btn-ghost{
+    border-color:rgba(239,231,216,0.3);
+    color:var(--ivory);
+  }
+  .btn-ghost:hover{border-color:var(--brass); color:var(--brass);}
+  .btn:focus-visible{outline:2px solid var(--brass); outline-offset:3px;}
+ 
+  .scroll-cue{
+    position:absolute;
+    bottom:36px;left:50%;
+    transform:translateX(-50%);
+    width:1px;height:46px;
+    background:linear-gradient(180deg, transparent, var(--brass) 60%, transparent);
+    animation:cue 2.4s ease-in-out infinite;
+  }
+  @keyframes cue{
+    0%,100%{opacity:0.3; transform:translate(-50%,0);}
+    50%{opacity:1; transform:translate(-50%,8px);}
+  }
+ 
+  /* ===== SECTION GENERIC ===== */
+  section{padding:108px 0;}
+  .section-head{max-width:560px; margin-bottom:56px;}
+  .section-head h2{font-size:clamp(30px,4vw,42px); color:var(--ivory);}
+  .section-head p{color:var(--stone); margin-top:14px; font-size:15.5px;}
+ 
+  /* ===== ABOUT ===== */
+  #room{
+    border-top:1px solid rgba(199,160,70,0.14);
+    border-bottom:1px solid rgba(199,160,70,0.14);
+  }
+  .room-grid{
+    display:grid;
+    grid-template-columns:1.3fr 1fr;
+    gap:60px;
+    align-items:start;
+  }
+  .room-copy p{color:var(--stone); font-size:16px; margin-bottom:18px; max-width:480px;}
+  .room-copy p:last-child{margin-bottom:0;}
+  .stat-list{display:flex; flex-direction:column; gap:26px;}
+  .stat{
+    border-left:2px solid var(--brass);
+    padding-left:18px;
+  }
+  .stat .num{
+    font-family:'JetBrains Mono',monospace;
+    font-size:30px;
+    color:var(--ivory);
+    display:block;
+  }
+  .stat .lbl{
+    font-size:13px;
+    color:var(--stone-dim);
+    letter-spacing:0.03em;
+    margin-top:3px;
+  }
+ 
+  /* ===== RATES ===== */
+  .rates-table{
+    width:100%;
+    border-collapse:collapse;
+    font-family:'JetBrains Mono',monospace;
+  }
+  .rates-table th{
+    text-align:left;
+    font-size:11.5px;
+    letter-spacing:0.12em;
+    text-transform:uppercase;
+    color:var(--brass);
+    padding:0 0 16px;
+    border-bottom:1px solid var(--brass);
+    font-weight:500;
+  }
+  .rates-table th:last-child, .rates-table td:last-child{text-align:right;}
+  .rates-table td{
+    padding:24px 0;
+    border-bottom:1px solid rgba(239,231,216,0.1);
+    font-size:16px;
+  }
+  .rates-table td.tname{
+    font-family:'Fraunces',serif;
+    font-size:21px;
+    color:var(--ivory);
+  }
+  .tmodel{
+    display:block;
+    font-family:'Inter',sans-serif;
+    font-size:12.5px;
+    color:var(--stone-dim);
+    margin-top:3px;
+    letter-spacing:0.01em;
+  }
+  .rates-table td.tcount{color:var(--stone-dim); font-size:13px;}
+  .rates-table td.price{color:var(--brass); font-size:20px;}
+  .rates-note{
+    margin-top:22px;
+    color:var(--stone-dim);
+    font-size:13.5px;
+  }
+ 
+  /* ===== AMENITIES (ball sequence) ===== */
+  #setup{background:var(--ink-soft);}
+  .ball-grid{
+    display:grid;
+    grid-template-columns:repeat(4, 1fr);
+    gap:1px;
+    background:rgba(239,231,216,0.08);
+    border:1px solid rgba(239,231,216,0.08);
+  }
+  .ball-card{
+    background:var(--ink-soft);
+    padding:32px 26px;
+    min-height:200px;
+    display:flex;
+    flex-direction:column;
+  }
+  .ball-card:nth-child(4n){background:var(--ink);}
+  .ball-top{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    margin-bottom:18px;
+  }
+  .ball-dot{
+    width:22px;height:22px;
+    border-radius:50%;
+    flex-shrink:0;
+    box-shadow: inset -2px -2px 4px rgba(0,0,0,0.35), inset 2px 2px 4px rgba(255,255,255,0.15);
+  }
+  .ball-pt{
+    font-family:'JetBrains Mono',monospace;
+    font-size:12px;
+    color:var(--stone-dim);
+  }
+  .ball-card h3{
+    font-size:17px;
+    color:var(--ivory);
+    margin-bottom:8px;
+    font-weight:600;
+  }
+  .ball-card p{font-size:14px; color:var(--stone); line-height:1.6;}
+ 
+  /* ===== VISIT ===== */
+  .visit-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:60px;
+  }
+  .hours-table{width:100%; font-family:'JetBrains Mono',monospace; font-size:14.5px;}
+  .hours-table tr{border-bottom:1px solid rgba(239,231,216,0.1);}
+  .hours-table td{padding:13px 0; color:var(--stone);}
+  .hours-table td:last-child{text-align:right; color:var(--ivory);}
+  .visit-panel{
+    border:1px solid rgba(199,160,70,0.25);
+    padding:38px;
+    background:linear-gradient(160deg, rgba(199,160,70,0.06), transparent 60%);
+  }
+  .visit-panel h3{font-size:13px; letter-spacing:0.1em; text-transform:uppercase; color:var(--brass); margin-bottom:16px; font-family:'JetBrains Mono',monospace; font-weight:500;}
+  .visit-panel address{
+    font-style:normal;
+    color:var(--ivory);
+    font-size:18px;
+    line-height:1.6;
+    margin-bottom:24px;
+    font-family:'Fraunces',serif;
+  }
+  .visit-contact{font-size:14.5px; color:var(--stone); margin-bottom:28px;}
+  .visit-contact a{color:var(--ivory); border-bottom:1px solid rgba(239,231,216,0.3);}
+  .visit-contact a:hover{color:var(--brass); border-color:var(--brass);}
+  .visit-note{color:var(--stone-dim); font-size:12.5px; margin-top:18px;}
+ 
+  /* ===== FOOTER ===== */
+  footer{
+    border-top:1px solid rgba(199,160,70,0.18);
+    padding:44px 0;
+  }
+  .foot-grid{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:20px;
+  }
+  .foot-brand{font-family:'Fraunces',serif; font-size:15px; color:var(--stone);}
+  .foot-links{display:flex; gap:24px; font-size:13px; color:var(--stone-dim);}
+  .foot-links a:hover{color:var(--brass);}
+ 
+  /* ===== REVEAL ===== */
+  .reveal{opacity:0; transform:translateY(18px); transition:opacity 0.7s ease, transform 0.7s ease;}
+  .reveal.is-visible{opacity:1; transform:translateY(0);}
+ 
+  /* ===== RESPONSIVE ===== */
+  @media (max-width:860px){
+    .nav-links{display:none;}
+    .menu-toggle{display:flex;}
+    .nav-cta{display:none;}
+    .room-grid, .visit-grid{grid-template-columns:1fr; gap:40px;}
+    .ball-grid{grid-template-columns:repeat(2, 1fr);}
+    section{padding:76px 0;}
+  }
+  @media (max-width:480px){
+    .ball-grid{grid-template-columns:1fr;}
+    .hero-actions{flex-direction:column; width:100%;}
+    .btn{justify-content:center;}
+  }
+ 
+  .mobile-menu{
+    display:none;
+    flex-direction:column;
+    background:var(--ink-soft);
+    border-top:1px solid rgba(199,160,70,0.18);
+    padding:10px 28px 22px;
+  }
+  .mobile-menu.open{display:flex;}
+  .mobile-menu a{padding:12px 0; font-size:15px; color:var(--stone); border-bottom:1px solid rgba(239,231,216,0.06);}
+</style>
+</head>
+<body>
+ 
+<header>
+  <nav>
+    <a href="#top" class="brand">
+      <span class="brand-mark">P</span>
+      <span class="brand-text">PINPOINT<small>SNOOKER &amp; POOL CLUB</small></span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#room">The Room</a></li>
+      <li><a href="#rates">Rates</a></li>
+      <li><a href="#setup">The Setup</a></li>
+      <li><a href="#visit">Visit</a></li>
+    </ul>
+    <a href="#visit" class="nav-cta">Get Directions</a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#room">The Room</a>
+    <a href="#rates">Rates</a>
+    <a href="#setup">The Setup</a>
+    <a href="#visit">Visit</a>
+  </div>
+</header>
+ 
+<main id="top">
+ 
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="hero-eyebrow">Sector 11 &middot; Faridabad</div>
+      <h1>Precision is<br>the only <em>house rule.</em></h1>
+      <div class="hero-rule"></div>
+      <p class="hero-sub">Pinpoint is a full-size snooker and pool room built for people who take the game seriously having tournament-grade tables, proper overhead lighting, and a room that stays out of your way.</p>
+      <div class="hero-actions">
+        <a href="#rates" class="btn btn-primary">View Tables &amp; Rates</a>
+        <a href="#visit" class="btn btn-ghost">Get Directions</a>
+      </div>
+    </div>
+    <div class="scroll-cue"></div>
+  </section>
+ 
+  <section id="room">
+    <div class="wrap room-grid reveal">
+      <div class="room-copy">
+        <div class="eyebrow">The Room</div>
+        <h2 style="font-size:clamp(26px,3.4vw,34px); color:var(--ivory); margin-bottom:22px;">We Exist because the Game deserves better.</h2>
+        <p>Pinpoint snooker and pool club located in sector 11D Faridabad, is a quiet, well-lit room with two premium (S1) snooker tables and two brand new (Magnum supreme) pool tables, set out with proper clearance on every side. No crowding, no music drowning out the click of the balls.</p>
+        <p>We built this room the way we'd want to walk into one: clean baize, true cushions, lounge seating and a dedicated smoking room.</p>
+      </div>
+      <div class="stat-list">
+        <div class="stat"><span class="num">2,000</span><span class="lbl">Sq. ft. floor, Basement</span></div>
+        <div class="stat"><span class="num">04</span><span class="lbl">Tables — 2 snooker (S1 Exclusive), 2 pool (Magnum Supreme)</span></div>
+        <div class="stat"><span class="num">7</span><span class="lbl">Days open</span></div>
+      </div>
+    </div>
+  </section>
+ 
+  <section id="rates">
+    <div class="wrap reveal">
+      <div class="section-head">
+        <div class="eyebrow">Rates</div>
+        <h2>Straightforward, by the hour.</h2>
+        <p>Bring in your A game and we will take care of the rest.</p>
+      </div>
+      <table class="rates-table">
+        <thead>
+          <tr><th>Table</th><th></th><th>Per Hour</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="tname">Snooker<span class="tmodel">Sharma S1 Exclusive</span></td>
+            <td class="tcount">2 tables</td>
+            <td class="price">&#8377;330</td>
+          </tr>
+          <tr>
+            <td class="tname">Pool<span class="tmodel">Magnum Supreme</span></td>
+            <td class="tcount">2 tables</td>
+            <td class="price">&#8377;220</td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="rates-note">Rates are subject to change during promotional-weeks/ discounts and tournaments.</p>
+    </div>
+  </section>
+ 
+  <section id="setup">
+    <div class="wrap reveal">
+      <div class="section-head">
+        <div class="eyebrow">The Setup</div>
+        <h2>Eight things we got right.</h2>
+        <p>In the order a snooker player would rank them.</p>
+      </div>
+    </div>
+    <div class="wrap">
+      <div class="ball-grid">
+        <div class="ball-card">
+          <div class="ball-top"><span class="ball-dot" style="background:var(--red);"></span><span class="ball-pt">01</span></div>
+          <h3>Tournament Grade Tables</h3>
+          <p>Brand-new Sharma S1 Exclusive tables, precise levelling, true cushions on every rail.</p>
+        </div>
+        <div class="ball-card">
+          <div class="ball-top"><span class="ball-dot" style="background:var(--yellow);"></span><span class="ball-pt">02</span></div>
+          <h3>Proper Lighting</h3>
+          <p>Dedicated Table lamps over every table, resulting in no shadows across the baize.</p>
+        </div>
+        <div class="ball-card">
+          <div class="ball-top"><span class="ball-dot" style="background:var(--green);"></span><span class="ball-pt">03</span></div>
+          <h3>Lounge Seating</h3>
+          <p>A proper place to sit and wait for your turn, not just a bench by the door.</p>
+        </div>
+        <div class="ball-card">
+          <div class="ball-top"><span class="ball-dot" style="background:var(--brown);"></span><span class="ball-pt">04</span></div>
+          <h3>Dedicated Smoking Room</h3>
+          <p>A well-ventilated space away from the tables, truly one of a kind.</p>
+        </div>
+        <div class="ball-card">
+          <div class="ball-top"><span class="ball-dot" style="background:var(--blue);"></span><span class="ball-pt">05</span></div>
+          <h3>Parking on Site</h3>
+          <p>Park outside and walk straight in, no circling the block, no paid lots.</p>
+        </div>
+        <div class="ball-card">
+          <div class="ball-top"><span class="ball-dot" style="background:var(--pink);"></span><span class="ball-pt">06</span></div>
+          <h3>Private Group Bookings</h3>
+          <p>Birthdays, league nights, and corporate frames, simply ask at the counter.</p>
+        </div>
+        <div class="ball-card">
+          <div class="ball-top"><span class="ball-dot" style="background:var(--black); border:1px solid var(--brass);"></span><span class="ball-pt">07</span></div>
+          <h3>Your Second Home</h3>
+          <p>No judgement, no rush. Staff who'll rack the frame, explain rules to a beginner, and leave you alone if you just want to play. :)</p>
+        </div>
+        <div class="ball-card">
+          <div class="ball-top"><span class="ball-dot" style="background:var(--white); border:1px solid var(--brass);"></span><span class="ball-pt">08</span></div>
+          <h3>Tournaments</h3>
+          <p>League nights, knockout tournaments, and match formats built for players who enjoy competing.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+ 
+  <section id="visit">
+    <div class="wrap reveal">
+      <div class="section-head">
+        <div class="eyebrow">Visit</div>
+        <h2>Find us at Sector 11D, Faridabad.</h2>
+      </div>
+      <div class="visit-grid">
+        <div>
+          <table class="hours-table">
+            <tr><td>Monday — Sunday</td><td>11:00 AM – 10:00 PM</td></tr>
+          </table>
+        </div>
+        <div class="visit-panel">
+          <h3>Address</h3>
+          <address>Sector 11D,<br>Pocket D,<br>Faridabad, Haryana, 121006</address>
+          <div class="visit-contact">
+            <a href="tel:+917428555329">+91 7428555329</a><br><br>
+            <a href="https://www.instagram.com/" target="_blank" rel="noopener">@pinpoint.club</a>
+          </div>
+          <a href="https://www.google.com/maps/place/Pinpoint+Snooker+%26+Pool+Club/@28.372658,77.3193576,18z/data=!4m15!1m8!3m7!1s0x390cdc6e4c6471db:0x235dcfae66315d8!2sSector+11D,+Sector+11,+Faridabad,+Haryana+121006!3b1!8m2!3d28.3709697!4d77.3173656!16s%2Fg%2F11b8ylp9mf!3m5!1s0x390cdd6dceaeed1d:0xe5462b179d285d77!8m2!3d28.3726566!4d77.3201112!16s%2Fg%2F11zf_w1f3d?entry=ttu&g_ep=EgoyMDI2MDYxMy4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener" class="btn btn-primary">Get Directions</a>
+        </div>
+      </div>
+    </div>
+  </section>
+ 
+</main>
+ 
+<footer>
+  <div class="wrap foot-grid">
+    <div class="foot-brand">Pinpoint Snooker &amp; Pool Club</div>
+    <div class="foot-links">
+      <a href="tel:+917428555329">Call</a>
+      <a href="https://www.instagram.com/" target="_blank" rel="noopener">Instagram</a>
+      <a href="#visit">Directions</a>
+    </div>
+    <div class="foot-links" id="copyright"></div>
+  </div>
+</footer>
+ 
+<script>
+  document.getElementById('copyright').textContent = '\u00A9 ' + new Date().getFullYear() + ' Pinpoint';
+ 
+  const toggle = document.getElementById('menuToggle');
+  const mobileMenu = document.getElementById('mobileMenu');
+  toggle.addEventListener('click', () => {
+    const open = mobileMenu.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', open);
+  });
+  mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    mobileMenu.classList.remove('open');
+    toggle.setAttribute('aria-expanded', false);
+  }));
+ 
+  if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('is-visible');
+      });
+    }, { threshold: 0.15 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  } else {
+    document.querySelectorAll('.reveal').forEach(el => el.classList.add('is-visible'));
+  }
+</script>
+ 
+</body>
+</html>
